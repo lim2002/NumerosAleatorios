@@ -1,0 +1,101 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; /* Fondo blanco */
+    color: #333333; /* Texto gris oscuro */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #ffffff; /* Texto blanco */
+    background-color: #0cb7f2; /* Fondo azul brillante */
+    font-size: 36px; /* Aumenta el tamaño del título */
+    font-weight: bold; /* Resalta el título */
+    letter-spacing: 1px; /* Añade espaciado entre letras */
+    padding: 10px; /* Añade espacio dentro del título */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+#method-menu {
+    background-color: #7cdaf9; /* Fondo azul claro */
+    color: #333333; /* Texto gris oscuro */
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.form-style {
+    display: none;
+    background-color: #b6ffff; /* Fondo celeste muy claro */
+    border: 1px solid #ff9800; /* Borde naranja */
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.form-style label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333333; /* Texto gris oscuro */
+}
+
+.form-style input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #0cb7f2; /* Borde azul brillante */
+    border-radius: 4px;
+    background-color: #ffffff; /* Fondo blanco */
+    color: #333333; /* Texto gris oscuro */
+}
+
+.form-style button {
+    background-color: #ff9800; /* Botón naranja */
+    color: #ffffff; /* Texto blanco */
+    border: none;
+    border-radius: 4px;
+    padding: 12px 24px; /* Aumenta el tamaño del botón */
+    font-size: 16px; /* Aumenta el tamaño del texto */
+    cursor: pointer;
+}
+
+.form-style button:hover {
+    background-color: #efad4a; /* Botón naranja suave en hover */
+}
+
+.table-style {
+    width: 100%; /* Cambiar el ancho al 100% */
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #ffffff; /* Fondo blanco */
+}
+
+.table-style th,
+.table-style td {
+    padding: 10px;
+    border: 1px solid #ff9800; /* Borde naranja */
+    text-align: center;
+    color: #333333; /* Texto gris oscuro */
+}
+
+.footer {
+    background-color: #7cdaf9; /* Fondo azul claro */
+    border-top: 1px solid #b6ffff; /* Borde azul muy claro */
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    margin-top: 50px;
+    padding: 20px;
+    text-align: center;
+    color: #0cb7f2; /* Texto azul brillante */
+}
