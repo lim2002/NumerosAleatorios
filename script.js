@@ -246,6 +246,11 @@ document.getElementById('lineal-form').addEventListener('submit', function(event
     const m = Math.pow(2,g); 
     const a = 1+(4*k);
 
+    // Mostramos los resultados debajo de los inputs
+    document.getElementById('resultado-a').innerHTML = `a = 1 + 4 * ${k} = ${a.toFixed(2)}`;
+    document.getElementById('resultado-m').innerHTML = `m = 2^${g.toFixed(2)} = ${m.toFixed(2)}`;
+
+
     resultTable2.style.display = 'block';
     resultTableBody2.innerHTML = '';
 
