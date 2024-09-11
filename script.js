@@ -9,6 +9,47 @@ const resultTable3 = document.getElementById('result-table3');
 const resultTableBody3 = document.getElementById('result-table-body3');
 
 const clearButton = document.getElementById('clear-table');
+//Limpiar
+// Obtener los formularios y los botones de limpiar
+const clearInputsButtons = document.querySelectorAll('#clear-inputs');
+const inputs = document.querySelectorAll('input[type="number"]');
+const clearTableButtons = document.querySelectorAll('#clear-table');
+
+// Función para limpiar los inputs
+function clearInputs() {
+    inputs.forEach(input => {
+        input.value = ''; // Limpia el valor de cada input
+    });
+}
+
+// Función para limpiar las tablas
+function clearTables() {
+    resultTableBody.innerHTML = ''; // Limpia la tabla 1
+    resultTableBody2.innerHTML = ''; // Limpia la tabla 2
+    resultTableBody3.innerHTML = ''; // Limpia la tabla 3
+
+    // Asegura que las tablas estén ocultas después de limpiar
+    resultTable.style.display = 'none';
+    resultTable2.style.display = 'none';
+    resultTable3.style.display = 'none';
+}
+
+
+// Asignar el evento click al botón de limpiar inputs
+clearInputsButtons.forEach(button => {
+    button.addEventListener('click', clearInputs);
+});
+
+// Asignar el evento click a los botones de limpiar tablas
+clearTableButtons.forEach(button => {
+    button.addEventListener('click', clearTables);
+});
+
+
+
+
+
+//Fin de limpieza
 
 document.addEventListener('DOMContentLoaded', function() {
     const clearButton = document.getElementById('clear-table');
@@ -43,9 +84,11 @@ selectButton.addEventListener('click', function() {
 });
 
 function showForm(formId) {
-    hideAllForms();
-    document.getElementById(formId).style.display = 'block';
+    hideAllForms();   // Oculta los demás formularios
+    clearTables();    // Limpia todas las tablas
+    document.getElementById(formId).style.display = 'block';  // Muestra el formulario seleccionado
 }
+
 
 function hideAllForms() {
     document.getElementById('cuadrados-form').style.display = 'none';
@@ -73,11 +116,12 @@ function generateCuadrados(seed, quantity) {
     resultTableBody.innerHTML = '';
     let numero = seed;
     const digits = seed.toString().length;
-        
+    let degeneracionEncontrada = false; // Bandera para verificar si hay degeneración
+
     if (digits % 2 !== 0) {
         numero = parseInt('0' + seed.toString());
     }    
-        
+    
     for (let i = 0; i < quantity; i++) {
         const xi = numero;
         const xiSquared = xi * xi;
@@ -106,6 +150,12 @@ function generateCuadrados(seed, quantity) {
         const xiNext = parseInt(xiNextString);
         const ri = xiNext / Math.pow(10, digits);
         
+        // Si se encuentra un Ri = 0 y no se ha detectado antes
+        if (ri === 0 && !degeneracionEncontrada) {
+            alert(`Ri se degenera en la posición: ${i + 1}`);
+            degeneracionEncontrada = true;  // Activa la bandera para evitar múltiples alertas
+        }
+        
         const newRow = document.createElement('tr');
         newRow.innerHTML = `<td>${i + 1}</td><td>${yiF}</td><td>${xiNext}</td><td>${ri}</td>`;
         
@@ -113,6 +163,7 @@ function generateCuadrados(seed, quantity) {
         numero = xiNext;
     }
 }
+
 
 document.getElementById('productos-form').addEventListener('submit', function(event){
     event.preventDefault();
@@ -132,10 +183,11 @@ document.getElementById('productos-form').addEventListener('submit', function(ev
 function generateProductos(seed1, seed2, quantity) {
     resultTable.style.display = 'block';
     resultTableBody.innerHTML = '';
-
+    
     let numero1 = seed1;
     let numero2 = seed2;
     const digits = seed1.toString().length;
+    let degeneracionEncontrada = false; // Bandera para verificar si hay degeneración
 
     for(let i = 0; i < quantity; i++) {
         const xi = numero1;
@@ -166,6 +218,12 @@ function generateProductos(seed1, seed2, quantity) {
         const xiNext = parseInt(xiNextString);
         const ri = xiNext / Math.pow(10, digits);
         
+        // Si se encuentra un Ri = 0 y no se ha detectado antes
+        if (ri === 0 && !degeneracionEncontrada) {
+            alert(`Ri se degenera en la posición: ${i + 1}`);
+            degeneracionEncontrada = true;  // Activa la bandera para evitar múltiples alertas
+        }
+        
         const newRow = document.createElement('tr');
         newRow.innerHTML = `<td>${i + 1}</td><td>${yiF}</td><td>${xiNext}</td><td>${ri}</td>`;
         
@@ -174,6 +232,7 @@ function generateProductos(seed1, seed2, quantity) {
         numero2 = xiNext;
     }
 }
+
 
 document.getElementById('lineal-form').addEventListener('submit', function(event){
     event.preventDefault();
