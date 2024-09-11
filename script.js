@@ -299,6 +299,11 @@ document.getElementById('multiplicativo-form').addEventListener('submit', functi
     const a = 5 + 8 * k;
     const m = Math.pow(2, g);
 
+    //Mostramos los resultados
+    document.getElementById('resultado-g2').innerHTML = `g = (Ln(P)/Ln(2)) + 2 = ${g}`;
+    document.getElementById('resultado-a2').innerHTML = `a = 5 + 8 * k = ${a}`;
+    document.getElementById('resultado-m2').innerHTML = `m = 2^g = ${m}`;
+
     console.log('g:', g);
     console.log('a:', a);
     console.log('m:', m);
