@@ -99,3 +99,9 @@ h1 {
     text-align: center;
     color: #0cb7f2; /* Texto azul brillante */
 }
+#resultado-a, #resultado-m, #resultado-g2, #resultado-a2, #resultado-m2 {
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+}
+

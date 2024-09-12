@@ -116,7 +116,9 @@ function generateCuadrados(seed, quantity) {
     resultTableBody.innerHTML = '';
     let numero = seed;
     const digits = seed.toString().length;
-    let degeneracionEncontrada = false; // Bandera para verificar si hay degeneración
+    let degeneracionEncontrada = false; // Bandera para verificar si hay degeneración (primer 0)
+    let cicloEncontrado = false; // Bandera para verificar ciclos
+    let valoresRi = {}; // Usamos un objeto para almacenar el Ri y su primera posición
 
     if (digits % 2 !== 0) {
         numero = parseInt('0' + seed.toString());
@@ -150,12 +152,22 @@ function generateCuadrados(seed, quantity) {
         const xiNext = parseInt(xiNextString);
         const ri = xiNext / Math.pow(10, digits);
         
-        // Si se encuentra un Ri = 0 y no se ha detectado antes
+        // Verificación de 0 en Ri (alerta si hay 0)
         if (ri === 0 && !degeneracionEncontrada) {
             alert(`Ri se degenera en la posición: ${i + 1}`);
-            degeneracionEncontrada = true;  // Activa la bandera para evitar múltiples alertas
+            degeneracionEncontrada = true;  // Evitar múltiples alertas para el 0
         }
-        
+
+        // Verificación de ciclos en Ri (alerta si hay repetición)
+        if (!cicloEncontrado && valoresRi.hasOwnProperty(ri)) {
+            alert(`Los números se repiten en ciclos y el ciclo comienza en la posición: ${valoresRi[ri] + 1}`);
+            cicloEncontrado = true;  // Evitar múltiples alertas para los ciclos
+        }
+
+        if (!valoresRi.hasOwnProperty(ri)) {
+            valoresRi[ri] = i; // Guardar el índice de la primera aparición de este Ri
+        }
+
         const newRow = document.createElement('tr');
         newRow.innerHTML = `<td>${i + 1}</td><td>${yiF}</td><td>${xiNext}</td><td>${ri}</td>`;
         
@@ -163,6 +175,10 @@ function generateCuadrados(seed, quantity) {
         numero = xiNext;
     }
 }
+
+
+
+
 
 
 document.getElementById('productos-form').addEventListener('submit', function(event){
@@ -187,7 +203,9 @@ function generateProductos(seed1, seed2, quantity) {
     let numero1 = seed1;
     let numero2 = seed2;
     const digits = seed1.toString().length;
-    let degeneracionEncontrada = false; // Bandera para verificar si hay degeneración
+    let degeneracionEncontrada = false; // Bandera para verificar si hay degeneración (primer 0)
+    let cicloEncontrado = false; // Bandera para verificar ciclos
+    let valoresRi = {}; // Usamos un objeto para almacenar el Ri y su primera posición
 
     for(let i = 0; i < quantity; i++) {
         const xi = numero1;
@@ -218,12 +236,22 @@ function generateProductos(seed1, seed2, quantity) {
         const xiNext = parseInt(xiNextString);
         const ri = xiNext / Math.pow(10, digits);
         
-        // Si se encuentra un Ri = 0 y no se ha detectado antes
+        // Verificación de 0 en Ri (alerta si hay 0)
         if (ri === 0 && !degeneracionEncontrada) {
             alert(`Ri se degenera en la posición: ${i + 1}`);
-            degeneracionEncontrada = true;  // Activa la bandera para evitar múltiples alertas
+            degeneracionEncontrada = true;  // Evitar múltiples alertas para el 0
         }
-        
+
+        // Verificación de ciclos en Ri (alerta si hay repetición)
+        if (!cicloEncontrado && valoresRi.hasOwnProperty(ri)) {
+            alert(`Los números se repiten en ciclos y el ciclo comienza en la posición: ${valoresRi[ri] + 1}`);
+            cicloEncontrado = true;  // Evitar múltiples alertas para los ciclos
+        }
+
+        if (!valoresRi.hasOwnProperty(ri)) {
+            valoresRi[ri] = i; // Guardar el índice de la primera aparición de este Ri
+        }
+
         const newRow = document.createElement('tr');
         newRow.innerHTML = `<td>${i + 1}</td><td>${yiF}</td><td>${xiNext}</td><td>${ri}</td>`;
         
@@ -232,6 +260,7 @@ function generateProductos(seed1, seed2, quantity) {
         numero2 = xiNext;
     }
 }
+
 
 
 document.getElementById('lineal-form').addEventListener('submit', function(event){
