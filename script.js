@@ -160,7 +160,7 @@ function generateCuadrados(seed, quantity) {
 
         // Verificación de ciclos en Ri (alerta si hay repetición)
         if (!cicloEncontrado && valoresRi.hasOwnProperty(ri)) {
-            alert(`Los números se repiten en ciclos y el ciclo comienza en la posición: ${valoresRi[ri] + 1}`);
+            alert(`Los números se repiten en ciclos y el ciclo comienza desde la posición: ${valoresRi[ri] + 1}`);
             cicloEncontrado = true;  // Evitar múltiples alertas para los ciclos
         }
 
@@ -244,7 +244,7 @@ function generateProductos(seed1, seed2, quantity) {
 
         // Verificación de ciclos en Ri (alerta si hay repetición)
         if (!cicloEncontrado && valoresRi.hasOwnProperty(ri)) {
-            alert(`Los números se repiten en ciclos y el ciclo comienza en la posición: ${valoresRi[ri] + 1}`);
+            alert(`Los números se repiten en ciclos y el ciclo comienza desde la posición: ${valoresRi[ri] + 1}`);
             cicloEncontrado = true;  // Evitar múltiples alertas para los ciclos
         }
 
