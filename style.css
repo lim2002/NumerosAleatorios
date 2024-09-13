@@ -19,7 +19,7 @@ h1 {
     text-align: center;
     margin-bottom: 30px;
     color: #ffffff; /* Texto blanco */
-    background-color: #0cb7f2; /* Fondo azul brillante */
+    background-color: #ff9800; /* Fondo azul brillante */
     font-size: 36px; /* Aumenta el tamaño del título */
     font-weight: bold; /* Resalta el título */
     letter-spacing: 1px; /* Añade espaciado entre letras */
@@ -28,7 +28,7 @@ h1 {
 }
 
 #method-menu {
-    background-color: #7cdaf9; /* Fondo azul claro */
+    background-color: #efad4a; /* Fondo azul claro */
     color: #333333; /* Texto gris oscuro */
     padding: 10px;
     border-radius: 8px;
@@ -37,7 +37,7 @@ h1 {
 
 .form-style {
     display: none;
-    background-color: #b6ffff; /* Fondo celeste muy claro */
+    background-color: #cdac7a; /* Fondo celeste muy claro */
     border: 1px solid #ff9800; /* Borde naranja */
     border-radius: 8px;
     padding: 20px;
@@ -54,7 +54,7 @@ h1 {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #0cb7f2; /* Borde azul brillante */
+    border: 1px solid #cdac7a; /* Borde azul brillante */
     border-radius: 4px;
     background-color: #ffffff; /* Fondo blanco */
     color: #333333; /* Texto gris oscuro */
@@ -90,14 +90,14 @@ h1 {
 }
 
 .footer {
-    background-color: #7cdaf9; /* Fondo azul claro */
-    border-top: 1px solid #b6ffff; /* Borde azul muy claro */
+    background-color: #ff9800; /* Fondo azul claro */
+    border-top: 1px solid #efad4a; /* Borde azul muy claro */
     border-radius: 4px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
     margin-top: 50px;
     padding: 20px;
     text-align: center;
-    color: #0cb7f2; /* Texto azul brillante */
+    color: #ffffff; /* Texto azul brillante */
 }
 #resultado-a, #resultado-m, #resultado-g2, #resultado-a2, #resultado-m2 {
     font-weight: bold;
