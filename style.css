@@ -37,7 +37,7 @@ h1 {
 
 .form-style {
     display: none;
-    background-color: #cdac7a; /* Fondo celeste muy claro */
+    background-color: #efad4a; /* Fondo celeste muy claro */
     border: 1px solid #ff9800; /* Borde naranja */
     border-radius: 8px;
     padding: 20px;
@@ -54,7 +54,7 @@ h1 {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #cdac7a; /* Borde azul brillante */
+    border: 1px solid #efad4a; /* Borde azul brillante */
     border-radius: 4px;
     background-color: #ffffff; /* Fondo blanco */
     color: #333333; /* Texto gris oscuro */
